@@ -546,8 +546,10 @@ app.get("/api/team", async (req, res) => {
   }
 });
 
-app.get('*', (req, res) => {
-  res.sendFile(path.join(__dirname, 'src/main/webapp/WEB-INF/jsp', 'Main.jsp'));
+app.get('/', (req, res) => {
+  // 브라우저가 HTML로 해석하도록 헤더 지정
+  res.setHeader('Content-Type', 'text/html; charset=utf-8');
+  res.sendFile(path.join(__dirname, 'public', 'Main.jsp'));
 });
 
 app.listen(PORT, () => {
