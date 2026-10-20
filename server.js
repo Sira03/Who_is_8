@@ -547,7 +547,7 @@ app.get("/api/team", async (req, res) => {
 });
 
 app.get('*', (req, res) => {
-  res.sendFile(path.join(__dirname, 'public', 'index.jsp'));
+  res.sendFile(path.join(__dirname, 'src/main/webapp/WEB-INF/jsp', 'Main.jsp'));
 });
 
 app.listen(PORT, () => {
